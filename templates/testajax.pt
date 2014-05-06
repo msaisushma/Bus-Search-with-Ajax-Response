@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Ajax Response</title>
+	<script type="text/javascript">
+	var req;
+	function sendRequest()
+	{
+		console.log("Sending request")
+		req = new XMLHttpRequest();
+		req.onreadystatechange = handleResponse;
+		req.open("GET","/first",true);
+		req.send(null);
+	}
+	function handleResponse()
+	{
+		if(req.readyState == 4 && req.status == 200)
+		{
+			console.log("readyState changed")
+			var response = req.responseText;
+			document.getElementById("div1").innerHTML=response;
+
+		}
+	}
+	function init()
+	{
+
+ 	console.log("stop here")
+	document.getElementById("btnSendRequest").onclick=sendRequest;
+ 	return false;
+ 	}
+ 	</script>
+</head>
+
+<body onload="init;">
+
+	<!-- <button type="button" id = "btnSendRequest">Send Request</button><br> -->
+	Enter the bus no<input type="text" name="bus_no"/><button id = "btnSendRequest" onclick="sendRequest()" type="submit">Search Bus</button>
+	<div id="div1">This portion is refreshed with Ajax Response</div>
+</body>
+</html>
