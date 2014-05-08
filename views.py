@@ -13,11 +13,12 @@ from pyramid.renderers import render
 from pyramid.response import Response
 from pyramid.view import view_config
 from server import get_session
+import json
 
 @view_config(route_name='home', renderer='templates/testajax.pt')
 def home_view(request):
-	res = "Route Info for Bus number 210:{0} {1} {2}".format('Chamrajpet','Lalbagh','NR Colony')	
-	return Response(res)
+	#res = "Route Info for Bus number 210:{0} {1} {2}".format('Chamrajpet','Lalbagh','NR Colony')	
+	return Response('<h2><p>Welcome</p></h2>')
 
 
 @view_config(route_name='bus')
@@ -31,23 +32,8 @@ def form_view(request):
 
 @view_config(route_name='first')
 def resource_view(request):
-	result = render('templates/first.pt',
-		{'ajax':'response','not':'received'},request=request)
+	result = render('json',
+		"Starting:{0} Ending:{1} Route info:{2} {3} {4} {5}".format('Majestic','Uttarahalli','Corporation','Chamrajpet','NRcolony','Chikkallasandra'),
+			request=request)
 	response = Response(result)
 	return response
-
-@view_config(route_name='source', renderer='templates/source.js')
-def src_view(request):
-	return Response('<p>Javascript source file</p>')
-
-@view_config(route_name='response', renderer='templates/testajax.pt')
-def fetch_bus_info(request):
-	bus_no = request.params.get('bus_no','')
-	assert bus_no, 'Keyword expected as bus_no. Got nothing instead'
-	engine = create_engine('sqlite:///buses.db', echo=True)
-	Session = get_session(engine)
-	results = Session.query(BusRoute).filter(BusRoute.bus_no==bus_no)
-	if results.count():
-		bus_route = results.one()
-		return Response("Starting:{0}<br/>Ending:{1}<br/>Route Info:{2}".format(bus_route.start_point, bus_route.end_point, bus_route.route))
-	return Response("Invalid Bus No:%s" % bus_no)
