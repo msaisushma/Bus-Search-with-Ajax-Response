@@ -33,8 +33,6 @@ else {
 </head>
 
 <body>
-
-<!-- <button type="submit" id = "btnSendRequest" onclick="sendRequest()">Display Bus Routes</button><br> -->
 Enter the bus no<input type="text" id="bus_no"/><button id = "btnSendRequest" onclick="sendRequest()" type="submit">Search Bus</button>
 <div id="div1">This portion is refreshed with Ajax Response</div>
 </body>
