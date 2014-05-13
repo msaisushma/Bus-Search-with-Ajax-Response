@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bus search form</title>
+</head>
+<body>
+	<form action="/response" method="POST">Enter the bus no<input type="text" name="bus_no"/><button type="submit">Search Bus</button></form>
+</body>
+</html>

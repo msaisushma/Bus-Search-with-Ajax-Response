@@ -1,0 +1,20 @@
+[
+    {
+        "Bus_no": 210, 
+        "Start_point": "Majestic", 
+        "End_point": "Uttarahalli", 
+        "Route_info": "Corporation, Chamrajpet, NRcolony, Chikkallasandra"
+    }, 
+    {
+        "Bus_no": 77, 
+        "Start_point": "NRColony", 
+        "End_point": "Mahalakshmi Layout", 
+        "Route_info": "Netkallappacircle Chamrajpet Navrang Sujatha"
+    }, 
+        {
+        "Bus_no": 3, 
+        "Start_point": "Banashankari 3rd stage", 
+        "End_point": "BTM layout", 
+        "Route_info": "GandhiBazaar Jayanagar 4th block EastEnd BTMLayout"
+    }
+]

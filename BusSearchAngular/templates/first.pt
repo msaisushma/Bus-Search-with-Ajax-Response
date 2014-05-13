@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Ajax Response</title>
+
+</head>
+<body>
+	<h2>Bus Route Info</h2>
+	<table border=2><tr><th>Bus No</th><th>Start Point</th><th>End Point</th><th>Route Info</th></tr>
+	<tr><td>210</td><td>Majestic</td><td>Uttarahalli</td><td>Corporation, Chamrajpet, NRcolony, Chikkallasandra</td></tr>
+	<tr><td>77</td><td>NRColony</td><td>Mahalakshmi Layout</td><td>Netkallappacircle, Chamrajpet, Navrang, Sujatha</td></tr>
+	<tr><td>3</td><td>Banashankari 3rd stage</td><td>BTM layout</td><td>GandhiBazaar, Jayanagar 4th block, EastEnd, BTMLayout</td></tr>
+	<tr><td>2</td><td>JP Nagar</td><td>Majestic</td><td> Indira Gandhi Circle, RVDental College,Jayanagara 4th Block,Cauvery Bhavana</td></tr>
+</table>
+</body>
+</html>

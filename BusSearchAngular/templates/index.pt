@@ -1,0 +1,33 @@
+    <html ng-app="busApp">
+    <head>
+        <title>Bus Search form</title>
+        <script type="text/javascript" src="${request.static_url('app/static/angular.min.js')}"></script>
+    </head>
+    <body>
+
+
+
+    <div ng-controller="BusRouteCtrl">
+        <input type="search" ng-model="query">
+        <!-- <input type="submit" > -->
+        <button type="submit" class="btn btn-primary">Search</button>
+
+    <ul class="busroutes">
+    <li ng-repeat="bus in busroutes | filter:query">
+        [{{$index + 1}}]
+    <b>Bus No:</b>{{bus.Bus_no}}<br>
+    <p>
+    <b>Start Point:</b>{{bus.Start_point}}<br>
+    <b>End Point:</b>{{bus.End_point}}<br>
+    <b>Route info:</b>{{bus.Route_info}}<br>
+    </p>
+    </li>
+    </ul>
+
+
+   </div>
+
+
+   <script type="text/javascript" src="${request.static_url('app/static/controller.js')}"></script>
+   </body>
+   </html>
